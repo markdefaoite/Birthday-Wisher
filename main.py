@@ -46,8 +46,8 @@ if birthday_contact:
     with open(letter,"r") as file:
         temp_message = file.read()
 
-    birthday_message = temp_message.replace("[NAME]", row[0])
-    TO_ADDRESS = row[1]
+    birthday_message = temp_message.replace("[NAME]", birthday_contact[0])
+    TO_ADDRESS = birthday_contact[1]
 
     with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
         connection.starttls()
